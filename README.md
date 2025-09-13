@@ -1,6 +1,7 @@
 # Simulazione MITM su Wi-Fi Pubblico — Progetto di Network Security
 
-Studente: Aurelio Salvati M63001919
+### STUDENTE: ``AURELIO SALVATI``
+
 
 ## Descrizione
 
@@ -24,21 +25,23 @@ L’ambiente di test è composto dalle seguenti componenti principali:
 
 ## Struttura del repository
 
-La struttura del progetto è la seguente:
 
-/README.md
+Il repository è organizzato in diverse cartelle, ciascuna con uno scopo specifico:
 
-/cert/                  # Generazione e storage della Root CA e dei certificati
+- **`/cert/`**  
+  Contiene i file relativi alla generazione e allo storage della **Root CA** e dei certificati utilizzati per l’intercettazione del traffico HTTPS.
 
-/mitm/                  # Script Python per mitmproxy (logica di intercettazione/modifica)
+- **`/mitm/`**  
+  Include lo **script Python** per il proxy MITM, responsabile dell’intercettazione e della possibile modifica delle richieste e risposte HTTPS.
 
-/portal/
-  server.js             # Backend Node.js che gestisce il captive portal e lo sblocco delle rotte
-  /public/              # Risorse front-end del captive portal (HTML, CSS, JS)
+- **`/portal/`**  
+  Contiene il backend Node.js e le risorse del captive portal:  
+  - **`server.js`** → gestisce le richieste dei client, il captive portal e lo sblocco delle rotte dopo l’installazione del certificato.  
+  - **`/public/`** → file front-end del captive portal (HTML, CSS, JS).
 
-/scripts_avvio/         # Script automatici per avviare l'ambiente (orchestrazione)
+- **`/scripts_avvio/`**  
+  Raccoglie gli **script automatici** utilizzati per l’avvio e l’orchestrazione dell’ambiente operativo.
 
-
-
-
+  ---
+  
 **Nota:** questo repository contiene materiale a scopo didattico e di ricerca sulle tecniche di analisi delle reti Wi-Fi pubbliche e sulle possibili contromisure. L'autore non si assume responsabilità per usi impropri.
