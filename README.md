@@ -1,4 +1,4 @@
-# Simulazione MITM su Wi-Fi Pubblico — Progetto di Network Security
+# Simulazione MITM su Wi-Fi Pubblico
 
 ### STUDENTE: ``AURELIO SALVATI``
 
