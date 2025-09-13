@@ -27,12 +27,17 @@ L’ambiente di test è composto dalle seguenti componenti principali:
 La struttura del progetto è la seguente:
 
 /README.md
-/cert/ # generazione e storage della Root CA e dei certificati
-/mitm/ # script Python per mitmproxy (logica di intercettazione/modifica)
+
+/cert/                  # Generazione e storage della Root CA e dei certificati
+
+/mitm/                  # Script Python per mitmproxy (logica di intercettazione/modifica)
+
 /portal/
-server.js # backend Node.js che gestisce il captive portal e lo sblocco delle rotte
-public/ # risorse front-end del captive portal (HTML, CSS, JS)
-/scripts_avvio/ # script automatici per avviare l'ambiente (orchestrazione)
+  server.js             # Backend Node.js che gestisce il captive portal e lo sblocco delle rotte
+  /public/              # Risorse front-end del captive portal (HTML, CSS, JS)
+
+/scripts_avvio/         # Script automatici per avviare l'ambiente (orchestrazione)
+
 
 
 
