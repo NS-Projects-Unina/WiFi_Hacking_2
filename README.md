@@ -43,5 +43,44 @@ Il repository è organizzato in diverse cartelle, ciascuna con uno scopo specifi
   Raccoglie gli **script automatici** utilizzati per l’avvio e l’orchestrazione dell’ambiente operativo.
 
   ---
-  
+  ## Avvio dell'ambiente
+
+Per eseguire il progetto, seguire i seguenti passaggi:
+
+1. **Avviare la modalità monitor e il fake AP**
+
+   ```bash
+   ./scripts_avvio/fake_ap.sh
+   ```
+
+2. **Impostare le regole di default di IPTables**
+
+   ```bash
+   ./scripts_avvio/regole_iptables.sh
+   ```
+
+3. **Avviare il server DHCP/DNS con dnsmasq**
+
+   ```bash
+   sudo dnsmasq -C dnsmasq.conf -d
+   ```
+
+4. **Avviare il backend Node.js del captive portal**
+
+   ```bash
+   sudo node server.js
+   ```
+
+5. **Avviare il proxy MITM**
+
+   ```bash
+   mitmweb --mode transparent --set confdir=certs --listen-host 0.0.0.0 --listen-port 8080 -s ./mitm/mitm.py
+   ```
+
+---
+
+Per approfondimenti e dettagli sulle scelte progettuali e implementative, si rimanda alla documentazione disponibile all'interno della repository.
+
+---
+
 **Nota:** questo repository contiene materiale a scopo didattico e di ricerca sulle tecniche di analisi delle reti Wi-Fi pubbliche e sulle possibili contromisure. L'autore non si assume responsabilità per usi impropri.
